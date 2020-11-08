@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>LINEAR ALGEBRA</title>
+</head>
+<body>
+<body bgcolor="#D7F4F8">
+<h1>Linear Algebra</h1>
+<p id="demo"> </p>
+
+<script>
+qnumber = 0
+Qs = [{"numParams" : 1,"question" : "What is a system of equations called if all the constant terms are zero?","answer" : "Homogenous","params" : [0]},{"numParams" : 1,"question" : "Is the following a non trivial solution: A solution in which at least 2 variables have a non zero output","answer" : "No","params" : [0]},{"numParams" : 1,"question" : "Is the following equation true or false: A square matrix is invertible if and only if A^T is invertible.","answer" : "True","params" : [0]},{"numParams" : 1,"question" : "Does a diagonal matrix have all of its entries off the main diagonal being zero?","answer" : "Yes","params" : [0]},{"numParams" : 1,"question" : "Is this matrix in row echelon form: all zeros are at the bottom,The first nonzero entry from the left in each nonzero row is 2, Each leading 1 is to the right of all leading 1s in the rows above it","answer" : "No","params" : [0]}]
+
+function genQuest() {
+    Qtype = Math.floor(Math.random()*5) + 1
+    qnumber = Qtype
+    question = Qs[Qtype].question
+    document.getElementById("demo").innerHTML = question
+}
+function revAns(){
+    answer = Qs[qnumber].answer
+    document.getElementById("ans").innerHTML = answer
+}
+</script>
+<button type="button" onclick="genQuest()">Generate Question</button>
+
+<p id="ans"> </p>
+    
+<button type="button" onclick="revAns()">Reveal Answer</button>
+
+</body>
+</html>

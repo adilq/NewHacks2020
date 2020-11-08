@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>MECHANICS</title>
+</head>
+<body>
+<body bgcolor="#D7F4F8">
+<h1>Mechanics</h1>
+<p id="demo"> </p>
+
+<script>
+qnumber = 0
+Qs = [{"numParams" : 1,"question" : "How many significant figures are in 10.83N?","answer" : "4","params" : [0]},{"numParams" : 1,"question" : "How many degrees of freedom does a pin joint have in 2D?","answer" : "2","params" : [0]},{"numParams" : 1,"question" : "How many degrees of freedom does a roller joint have in 3D?","answer" : "1","params" : [0]},{"numParams" : 1,"question" : "True or false: Vectors only have a magnitude and no direction","answer" : "False","params" : [0]},{"numParams" : 1,"question" : "What formula is used to divide the force F into its components Fx, Fy?","answer" : "Fcostheta, Fsintheta","params" : [0]}]
+
+function genQuest() {
+    Qtype = Math.floor(Math.random()*5) + 1
+    qnumber = Qtype
+    question = Qs[Qtype].question
+    document.getElementById("demo").innerHTML = question
+}
+function revAns(){
+    answer = Qs[qnumber].answer
+    document.getElementById("ans").innerHTML = answer
+}
+</script>
+<button type="button" onclick="genQuest()">Generate Question</button>
+
+<p id="ans"> </p>
+    
+<button type="button" onclick="revAns()">Reveal Answer</button>
+
+</body>
+</html>
